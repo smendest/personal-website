@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal CV - About Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="hero-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1 class="hero-title" data-en="Welcome" data-es="Bienvenido">Welcome</h1>
+                <p class="hero-subtitle" data-en="This website and other services are hosted in my own home-lab." data-es="Este sitio web y otros servicios están alojados en mi propio laboratorio casero.">
+                    This website and other services are hosted in my own home-lab.
+                </p>
+            </div>
+            <div class="header-visual">
+                <div class="hero-graphic"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+
+        <!-- CV Content -->
+        <div class="cv-container">
+            <!-- Name and Title -->
+            <section class="cv-header">
+                <h1 class="name" data-en="Your Name" data-es="Tu Nombre">Your Name</h1>
+                <p class="profession" data-en="Your Profession" data-es="Tu Profesión">Your Profession</p>
+            </section>
+
+            <!-- External Links -->
+            <section class="external-links">
+                <a href="https://linkedin.com/in/yourprofile" class="link-item" target="_blank" rel="noopener">
+                    <span class="link-icon">💼</span>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/yourprofile" class="link-item" target="_blank" rel="noopener">
+                    <span class="link-icon">💻</span>
+                    GitHub
+                </a>
+                <a href="mailto:your.email@example.com" class="link-item">
+                    <span class="link-icon">✉️</span>
+                    Gmail
+                </a>
+                <button class="btn-secondary" id="downloadCV">
+                    <span class="btn-icon">📄</span>
+                    <span data-en="Download CV" data-es="Descargar CV">Download CV</span>
+                </button>
+                <button class="btn-secondary" id="languageToggle">
+                    <span class="btn-icon">🌐</span>
+                    <span data-en="ES" data-es="EN">ES</span>
+                </button>
+                
+            </section>
+            
+            <!-- About Section -->
+            <section class="cv-section">
+                <h2 class="section-title" data-en="About" data-es="Acerca de mí">About</h2>
+                <p class="section-content" data-en="Your introduction text will go here. This is where you can introduce yourself professionally and personally." data-es="Tu texto de introducción irá aquí. Aquí puedes presentarte profesional y personalmente.">
+                    Your introduction text will go here. This is where you can introduce yourself professionally and personally.
+                </p>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="cv-section">
+                <h2 class="section-title" data-en="Work Experience" data-es="Experiencia Laboral">Work Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <h3 class="job-title">Job Title</h3>
+                        <p class="company">Company Name</p>
+                        <p class="duration">Month Year - Present</p>
+                        <ul class="job-description">
+                            <li>Job responsibility or achievement</li>
+                            <li>Another responsibility or achievement</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Studies -->
+            <section class="cv-section">
+                <h2 class="section-title" data-en="Studies" data-es="Estudios">Studies</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <h3 class="degree">Degree Name</h3>
+                        <p class="institution">Institution Name</p>
+                        <p class="duration">Year - Year</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="cv-section">
+                <h2 class="section-title" data-en="Skills" data-es="Habilidades">Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Skill 1</span>
+                            <span class="skill-tag">Skill 2</span>
+                            <span class="skill-tag">Skill 3</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests -->
+            <section class="cv-section">
+                <h2 class="section-title" data-en="Interests" data-es="Intereses">Interests</h2>
+                <div class="interests-container">
+                    <div class="interest-item">
+                        <span class="interest-icon">🎯</span>
+                        <span data-en="Interest 1" data-es="Interés 1">Interest 1</span>
+                    </div>
+                    <div class="interest-item">
+                        <span class="interest-icon">📚</span>
+                        <span data-en="Interest 2" data-es="Interés 2">Interest 2</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
