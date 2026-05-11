@@ -58,7 +58,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   padding: 0 2rem;
   position: relative;
@@ -84,7 +84,30 @@ body {
 }
 
 .header-visual {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(205, 214, 244, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.profile-image:hover {
+  transform: scale(1.05) translateZ(0);
+  box-shadow: 0 6px 25px rgba(137, 180, 250, 0.4);
 }
 
 
@@ -107,7 +130,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
@@ -341,6 +364,74 @@ body {
 .interest-icon {
   font-size: 1.5rem;
   color: var(--yellow);
+}
+
+/* Language Switch */
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--surface0);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.switch-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--subtext1);
+  transition: color 0.3s ease;
+}
+
+.switch-label.active {
+  color: var(--text);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--blue);
+
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text);
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--blue);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
 
 /* Responsive Design */

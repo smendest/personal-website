@@ -3,9 +3,11 @@ let currentLanguage = 'en';
 
 function toggleLanguage() {
     const elements = document.querySelectorAll('[data-en][data-es]');
-    const languageButton = document.querySelector('#languageToggle span:last-child');
+    const languageSwitch = document.getElementById('languageToggle');
+    const switchLabels = document.querySelectorAll('.switch-label');
     
-    currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+    // Update current language based on switch state
+    currentLanguage = languageSwitch.checked ? 'es' : 'en';
     
     elements.forEach(element => {
         if (currentLanguage === 'en') {
@@ -15,10 +17,14 @@ function toggleLanguage() {
         }
     });
     
-    // Update button text
-    if (languageButton) {
-        languageButton.textContent = currentLanguage === 'en' ? 'ES' : 'EN';
-    }
+    // Update switch labels
+    switchLabels.forEach((label, index) => {
+        if (index === 0) { // EN label
+            label.classList.toggle('active', currentLanguage === 'en');
+        } else { // ES label
+            label.classList.toggle('active', currentLanguage === 'es');
+        }
+    });
     
     // Save language preference
     localStorage.setItem('preferredLanguage', currentLanguage);
@@ -101,14 +107,40 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', function() {
     // Load saved language preference
     const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage && savedLanguage !== currentLanguage) {
-        toggleLanguage();
+    const languageSwitch = document.getElementById('languageToggle');
+    const switchLabels = document.querySelectorAll('.switch-label');
+    
+    // Set initial language based on saved preference or default to EN
+    if (savedLanguage === 'es') {
+        currentLanguage = 'es';
+        languageSwitch.checked = true;
+    } else {
+        currentLanguage = 'en';
+        languageSwitch.checked = false;
     }
     
-    // Language toggle button
-    const languageToggle = document.getElementById('languageToggle');
-    if (languageToggle) {
-        languageToggle.addEventListener('click', toggleLanguage);
+    // Apply initial language
+    const elements = document.querySelectorAll('[data-en][data-es]');
+    elements.forEach(element => {
+        if (currentLanguage === 'en') {
+            element.textContent = element.getAttribute('data-en');
+        } else {
+            element.textContent = element.getAttribute('data-es');
+        }
+    });
+    
+    // Set initial switch label states
+    switchLabels.forEach((label, index) => {
+        if (index === 0) { // EN label
+            label.classList.toggle('active', currentLanguage === 'en');
+        } else { // ES label
+            label.classList.toggle('active', currentLanguage === 'es');
+        }
+    });
+    
+    // Language toggle switch
+    if (languageSwitch) {
+        languageSwitch.addEventListener('change', toggleLanguage);
     }
     
     // Download CV button
@@ -130,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
 
 // Utility function to create CV directory structure check
 function checkCVFiles() {
