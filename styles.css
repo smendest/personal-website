@@ -263,6 +263,12 @@ body {
   line-height: 1.7;
 }
 
+.skill-checkmark {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
 /* Experience and Education */
 .experience-list, .education-list {
   display: flex;
