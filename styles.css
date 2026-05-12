@@ -231,7 +231,7 @@ body {
 
 .company-link {
   color: var(--company-link);
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 .company-link:hover {
