@@ -230,7 +230,7 @@ body {
 }
 
 .company-link {
-  color: var(--company-link);
+  color: var(--text-muted-dark);
   /* text-decoration: none; */
 }
 
