@@ -402,6 +402,10 @@ body {
   transform: translateY(-1px);
 }
 
+.blue-border {
+  border-color: var(--blue-link);
+}
+
 /* Interests */
 .interests-container {
   display: grid;
