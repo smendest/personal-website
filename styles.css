@@ -229,9 +229,6 @@ body {
   transform: translateY(-1px);
 }
 
-.blue-link {
-  color: var(--blue-link);
-}
 
 .company-link {
   color: var(--text-muted-dark);
