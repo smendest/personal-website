@@ -198,6 +198,13 @@ body {
   font-weight: 400;
 }
 
+.location {
+  font-size: 0.95rem;
+  color: var(--text-muted-dark);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
 /* External Links */
 .external-links {
   display: flex;
